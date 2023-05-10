@@ -1,0 +1,34 @@
+<component name="libraryTable">
+  <library name="src">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/android/guava-testlib/src" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/android/guava-testlib/test" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/android/guava-tests/benchmark" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/android/guava-tests/test" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/android/guava/src" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/futures/failureaccess/src" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/futures/listenablefuture1/src" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/src" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/src-super/com/google/common/base/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/src-super/com/google/common/cache/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/src-super/com/google/common/collect/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/src-super/com/google/common/escape/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/src-super/com/google/common/primitives/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/src-super/com/google/common/util/concurrent/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/test" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/test-super/com/google/common/collect/testing/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/test-super/com/google/common/math/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/test-super/com/google/common/primitives/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/test-super/com/google/common/testing/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-gwt/test-super/com/google/common/util/concurrent/super" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-testlib/src" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-testlib/test" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-tests/benchmark" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava-tests/test" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/guava/src" />
+      <root url="file://$PROJECT_DIR$/../google-guava-0a17f4a/refactorings" />
+    </SOURCES>
+  </library>
+</component>

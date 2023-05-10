@@ -1,6 +1,9 @@
 package com.chess.engine;
 
-public enum Alliance {                                                                                                  //Using enum to keep alliance typesafe
+/**
+ * Enum to keep alliance typesafe
+ */
+public enum Alliance {
     WHITE,
     BLACK
 }

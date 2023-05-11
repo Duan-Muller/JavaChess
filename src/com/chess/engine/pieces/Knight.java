@@ -7,6 +7,8 @@ import com.chess.engine.board.Move;
 import com.chess.engine.board.Tile;
 import com.google.common.collect.ImmutableList;
 
+import static com.chess.engine.board.Move.*;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -21,7 +23,7 @@ public class Knight extends Piece {
     }
 
     @Override
-    public Collection<Move> calculateLegalMoves(Board board) {
+    public Collection<Move> calculateLegalMoves(final Board board) {
 
         final List<Move> legalMoves = new ArrayList<>();
 
@@ -34,7 +36,7 @@ public class Knight extends Piece {
             if (BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
 
                 //If the rule breaks down by the knight being in the first, second, seventh, eighth column
-                //then this exclusion is set up to catch the errors
+                //then this exclusion is set up to catch the edge cases
                 if (isFirstColumnExclusion(this.piecePosition, currentCandidateOffset) ||
                         isSecondColumnExclusion(this.piecePosition, currentCandidateOffset) ||
                         isSeventhColumnExclusion(this.piecePosition, currentCandidateOffset) ||
@@ -49,7 +51,7 @@ public class Knight extends Piece {
                 //the piece may move there
                 if (!candidateDestinationTile.isTileOccupied()) {
 
-                    legalMoves.add(new Move());
+                    legalMoves.add(new MajorMove(board, this, candidateDestinationCoordinate));
 
                 } else {
                     //Else if the tile is occupied the alliance of the piece on that tile will be obtained
@@ -62,7 +64,7 @@ public class Knight extends Piece {
                     //move will be added to the list of legal moves
                     if (this.pieceAlliance != pieceAlliance) {
 
-                        legalMoves.add(new Move());
+                        legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinate, pieceAtDestination));
 
                     }
 

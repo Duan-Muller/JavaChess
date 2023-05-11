@@ -25,7 +25,7 @@ public abstract class Tile {
         final Map<Integer, EmptyTile> emptyTileMap = new HashMap<>();
 
         //Using a for loop to place an empty tile at every position on a chess board
-        for (int i = 0; i < 64; i++) {
+        for (int i = 0; i < BoardUtils.NUM_TILES; i++) {
             emptyTileMap.put(i, new EmptyTile(i));
 
         }
@@ -43,7 +43,7 @@ public abstract class Tile {
     }
 
     //Constructor to create a new empty tile at the coordinates given
-    private Tile(int tileCoordinate) {
+    private Tile(final int tileCoordinate) {
         this.tileCoordinate = tileCoordinate;
     }
 
@@ -92,7 +92,7 @@ public abstract class Tile {
         private final Piece pieceOnTile;
 
         //Constructor to create the occupied tile object and using parent class attribute
-        private OccupiedTile(int tileCoordinate, Piece pieceOnTile) {
+        private OccupiedTile(int tileCoordinate, final Piece pieceOnTile) {
             super(tileCoordinate);
             this.pieceOnTile = pieceOnTile;
         }

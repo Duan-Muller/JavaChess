@@ -8,24 +8,39 @@ public class BoardUtils {
      * takes place for special pieces
      */
     public static final boolean[] FIRST_COLUMN = initColumn(0);
+
     /**
      * A static method to be utilized when a piece is being moved to ensure each of the moves are legal.
      * Only First, Second, Seventh and Eighth column is used as this is the only place where the rule break
      * takes place for special pieces
      */
     public static final boolean[] SECOND_COLUMN = initColumn(1);
+
     /**
      * A static method to be utilized when a piece is being moved to ensure each of the moves are legal.
      * Only First, Second, Seventh and Eighth column is used as this is the only place where the rule break
      * takes place for special pieces
      */
     public static final boolean[] SEVENTH_COLUMN = initColumn(6);
+
     /**
      * A static method to be utilized when a piece is being moved to ensure each of the moves are legal.
      * Only First, Second, Seventh and Eighth column is used as this is the only place where the rule break
      * takes place for special pieces
      */
     public static final boolean[] EIGHTH_COLUMN = initColumn(7);
+
+    /**
+     * A static method to be utilized by the Pawn class to determine whether it is in the second row
+     * i.e. White Alliance
+     */
+    public static final boolean[] SECOND_ROW = null;
+
+    /**
+     * A static method to be utilized by the Pawn class to determine whether it is in the second row
+     * i.e. Black Alliance
+     */
+    public static final boolean[] SEVENTH_ROW = null;
 
     public static final int NUM_TILES = 64;
     public static final int NUM_TILES_PER_ROW = 8;

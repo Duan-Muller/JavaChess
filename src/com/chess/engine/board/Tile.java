@@ -69,6 +69,14 @@ public abstract class Tile {
             super(coordinate);
         }
 
+        //Used to display an empty tile as "-" in the ascii value populated board
+        @Override
+        public String toString() {
+
+            return "-";
+
+        }
+
         @Override
         //Override occupied method to state that the tile is not occupied
         public boolean isTileOccupied() {
@@ -95,6 +103,15 @@ public abstract class Tile {
         private OccupiedTile(int tileCoordinate, final Piece pieceOnTile) {
             super(tileCoordinate);
             this.pieceOnTile = pieceOnTile;
+        }
+
+        @Override
+        public String toString() {
+
+            return getPiece().getPieceAlliance().isBlack() ? getPiece().toString().toLowerCase() :
+                    getPiece().toString();
+
+
         }
 
         @Override

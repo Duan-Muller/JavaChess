@@ -18,8 +18,8 @@ public class Bishop extends Piece {
     //Offset positions to consider for a bishop to move to if the coordinate is not out of bounds
     private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-9, -7, 7, 9};
 
-    Bishop(int piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public Bishop(final Alliance pieceAlliance, final int piecePosition) {
+        super(piecePosition, pieceAlliance, PieceType.BISHOP);
     }
 
     @Override
@@ -62,7 +62,8 @@ public class Bishop extends Piece {
                         //move will be added to the list of legal moves
                         if (this.pieceAlliance != pieceAlliance) {
 
-                            legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinate, pieceAtDestination));
+                            legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinate,
+                                    pieceAtDestination));
 
                         }
                         break;
@@ -76,6 +77,13 @@ public class Bishop extends Piece {
 
 
         return ImmutableList.copyOf(legalMoves);
+    }
+
+    @Override
+    public String toString() {
+
+        return PieceType.BISHOP.toString();
+
     }
 
     /**

@@ -8,6 +8,8 @@ import java.util.Collection;
 
 public abstract class Piece {
 
+    //Declaring a member field to get the type of piece which is present on a certain tile
+    protected final PieceType pieceType;
 
     //Declaring a member field to check/confirm if it is a piece's first move or not
     protected final boolean isFirstMove;
@@ -22,12 +24,19 @@ public abstract class Piece {
      * A class which will be used for every piece to assign their Position, Alliance to them as well as check
      * if it is a piece's first move
      */
-    Piece(final int piecePosition, final Alliance pieceAlliance) {
+    Piece(final int piecePosition, final Alliance pieceAlliance, final PieceType pieceType) {
 
+        this.pieceType = pieceType;
         this.piecePosition = piecePosition;
         this.pieceAlliance = pieceAlliance;
         //More work to do!
         this.isFirstMove = false;
+
+    }
+
+    public int getPiecePosition() {
+
+        return this.piecePosition;
 
     }
 
@@ -45,9 +54,73 @@ public abstract class Piece {
         return this.isFirstMove;
     }
 
+    public PieceType getPieceType() {
+
+        return this.pieceType;
+
+    }
+
     /**
      * Declaring a collection to store the legal moves for a piece which will return a list of legal moves when called
      */
     public abstract Collection<Move> calculateLegalMoves(final Board board);
+
+    //Using an enum to assign values to the hash map(ascii) board where capitalized letters are White alliance
+    //and lower case letters are Black alliance
+    public enum PieceType {
+
+        PAWN("P") {
+            @Override
+            public boolean isKing() {
+                return false;
+            }
+        },
+        KNIGHT("N") {
+            @Override
+            public boolean isKing() {
+                return false;
+            }
+        },
+        BISHOP("B") {
+            @Override
+            public boolean isKing() {
+                return false;
+            }
+        },
+        ROOK("R") {
+            @Override
+            public boolean isKing() {
+                return false;
+            }
+        },
+        QUEEN("Q") {
+            @Override
+            public boolean isKing() {
+                return false;
+            }
+        },
+        KING("K") {
+            @Override
+            public boolean isKing() {
+                return true;
+            }
+        };
+
+        private String pieceName;
+
+        PieceType(String pieceName) {
+
+            this.pieceName = pieceName;
+
+        }
+
+        @Override
+        public String toString() {
+            return this.pieceName;
+        }
+
+        public abstract boolean isKing();
+
+    }
 
 }

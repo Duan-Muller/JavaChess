@@ -18,8 +18,8 @@ public class Knight extends Piece {
     //Offset positions to consider for a knight to move to if the coordinate is not out of bounds
     private final static int[] CANDIDATE_MOVE_COORDINATES = {-17, -15, -10, -6, 6, 10, 15, 17};
 
-    Knight(final int piecePosition, final Alliance pieceAlliance) {                                                     //Constructor to create the knight object
-        super(piecePosition, pieceAlliance);
+    public Knight(final Alliance pieceAlliance, final int piecePosition) {
+        super(piecePosition, pieceAlliance, PieceType.KNIGHT);
     }
 
     @Override
@@ -61,7 +61,7 @@ public class Knight extends Piece {
                     final Alliance pieceAlliance = pieceAtDestination.getPieceAlliance();
 
                     //If the Knight and another piece on a destination tile have different alliances than the
-                    //move will be added to the list of legal moves
+                    //move will be added to the list of legal moves as an attack move
                     if (this.pieceAlliance != pieceAlliance) {
 
                         legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinate, pieceAtDestination));
@@ -75,6 +75,13 @@ public class Knight extends Piece {
         }
         //Return the list of legal moves after it is determined
         return ImmutableList.copyOf(legalMoves);
+    }
+
+    @Override
+    public String toString() {
+
+        return PieceType.KNIGHT.toString();
+
     }
 
     /**

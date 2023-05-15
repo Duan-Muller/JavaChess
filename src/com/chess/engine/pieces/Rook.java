@@ -16,8 +16,8 @@ public class Rook extends Piece {
     //Offset positions to consider for a rook to move to if the coordinate is not out of bounds
     private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-8, -1, 1, 8};
 
-    Rook(int piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public Rook(final Alliance pieceAlliance, final int piecePosition) {
+        super(piecePosition, pieceAlliance, PieceType.ROOK);
     }
 
     @Override
@@ -74,6 +74,13 @@ public class Rook extends Piece {
 
 
         return ImmutableList.copyOf(legalMoves);
+    }
+
+    @Override
+    public String toString() {
+
+        return PieceType.ROOK.toString();
+
     }
 
     /**

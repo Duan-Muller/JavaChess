@@ -16,8 +16,8 @@ public class Queen extends Piece {
     //Offset positions to consider for a queen to move to if the coordinate is not out of bounds
     private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-9, -8, -7, -1, 1, 7, 8, 9};
 
-    Queen(int piecePosition, Alliance pieceAlliance) {
-        super(piecePosition, pieceAlliance);
+    public Queen(final Alliance pieceAlliance, final int piecePosition) {
+        super(piecePosition, pieceAlliance, PieceType.QUEEN);
     }
 
     @Override
@@ -74,6 +74,13 @@ public class Queen extends Piece {
 
 
         return ImmutableList.copyOf(legalMoves);
+    }
+
+    @Override
+    public String toString() {
+
+        return PieceType.QUEEN.toString();
+
     }
 
     /**

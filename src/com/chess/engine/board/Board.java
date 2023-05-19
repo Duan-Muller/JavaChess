@@ -6,6 +6,7 @@ import com.chess.engine.player.BlackPlayer;
 import com.chess.engine.player.Player;
 import com.chess.engine.player.WhitePlayer;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 
 import java.util.*;
 
@@ -19,11 +20,12 @@ public class Board {
     //Two classes to keep track of the White Alliance and Black Alliance players
     private final WhitePlayer whitePlayer;
     private final BlackPlayer blackPlayer;
+    private final Player currentPlayer;
 
     /**
      * A method to call the board builder method and create the chess board
      */
-    private Board(Builder builder) {
+    private Board(final Builder builder) {
 
         this.gameBoard = createGameBoard(builder);
         this.whitePieces = calculateActivePieces(this.gameBoard, Alliance.WHITE);
@@ -35,6 +37,8 @@ public class Board {
 
         this.whitePlayer = new WhitePlayer(this, whiteStandardLegalMoves, blackStandardLegalMoves);
         this.blackPlayer = new BlackPlayer(this, whiteStandardLegalMoves, blackStandardLegalMoves);
+
+        this.currentPlayer = builder.nextMoveMaker.choosePlayer(this.whitePlayer, this.blackPlayer);
     }
 
     @Override
@@ -68,7 +72,13 @@ public class Board {
     public Player blackPlayer() {
 
         return this.blackPlayer;
-        
+
+    }
+
+    public Player currentPlayer() {
+
+        return this.currentPlayer;
+
     }
 
     //Methods to get the Collection of each alliance's pieces for each respective player class
@@ -205,12 +215,20 @@ public class Board {
     }
 
     /**
+     * A method to combine all the legal moves of both the white and black player
+     */
+    public Iterable<Move> getAllLegalMoves() {
+        return Iterables.unmodifiableIterable(Iterables.concat(this.whitePlayer.getLegalMoves(), this.blackPlayer.getLegalMoves()));
+    }
+
+    /**
      * Creating a class making use of the Builder Pattern to be able to create the chess board
      */
     public static class Builder {
 
         Map<Integer, Piece> boardConfig;
         Alliance nextMoveMaker;
+        Pawn enPassantPawn;
 
         public Builder() {
 
@@ -246,5 +264,8 @@ public class Board {
         }
 
 
+        public void setEnPassantPawn(Pawn enPassantPawn) {
+            this.enPassantPawn = enPassantPawn;
+        }
     }
 }

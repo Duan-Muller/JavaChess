@@ -57,6 +57,12 @@ public abstract class Tile {
      */
     public abstract Piece getPiece();
 
+    public int getTileCoordinate() {
+
+        return this.tileCoordinate;
+
+    }
+
     /* subclasses going to be used to represent empty tile */
 
     /**

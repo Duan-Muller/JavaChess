@@ -309,6 +309,7 @@ public abstract class Move {
 
         @Override
         public String toString() {
+            //Default PGN Chess format for king side castle
             return "O-O";
         }
     }
@@ -322,6 +323,7 @@ public abstract class Move {
 
         @Override
         public String toString() {
+            //Default PGN Chess format for queen side castle
             return "O-O-O";
         }
 
